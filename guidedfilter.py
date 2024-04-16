@@ -3,17 +3,13 @@ import numpy as np
 
 left_image = cv2.imread('/home/tharun/Data_extended/Baby1/view1.png', 0)
 right_image = cv2.imread('/home/tharun/Data_extended/Baby1/view5.png', 0)
-
 left_image = np.float32(left_image) / 255.0
 right_image = np.float32(right_image) / 255.0
 
-# Define window size for guided filter
 radius = 6
 eps = 0.01
-
 left_filtered = cv2.ximgproc.guidedFilter(left_image, left_image, radius, eps)
 right_filtered = cv2.ximgproc.guidedFilter(right_image, right_image, radius, eps)
-
 left_filtered = np.uint8(left_filtered * 255)
 right_filtered = np.uint8(right_filtered * 255)
 
