@@ -43,7 +43,7 @@ stereo = cv2.StereoSGBM_create(
     disp12MaxDiff=1,
     P1=8 * 3 * window_size ** 2,
     P2=32 * 3 * window_size ** 2,
-    mode=cv2.STEREO_SGBM_MODE_HH4        #using gradient transform
+    mode=cv2.STEREO_SGBM_MODE_HH4        #Using gradient transform
 )
 disparity_gt=stereo.compute(left_filtered, right_filtered).astype(np.float32) / 16.0
 
